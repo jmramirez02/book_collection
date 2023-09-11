@@ -1076,3 +1076,239 @@ Processing by BooksController#index as HTML
 Completed 200 OK in 186ms (Views: 144.1ms | ActiveRecord: 0.3ms | Allocations: 3402)
 
 
+Started GET "/books" for 172.17.0.1 at 2023-09-11 23:40:00 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20230911233742_add_publishdate_to_books.rb
+
+
+):
+  
+activerecord (7.0.7.2) lib/active_record/migration.rb:627:in `check_pending!'
+activerecord (7.0.7.2) lib/active_record/migration.rb:592:in `block (2 levels) in call'
+activesupport (7.0.7.2) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.7.2) lib/active_record/migration.rb:597:in `block in call'
+activerecord (7.0.7.2) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.7.2) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.7.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.7.2) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.7.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.7.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.7.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.7.2) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.7.2) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.7.2) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.7.2) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.7.2) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.7.2) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.7.2) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.7.2) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.7.2) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.7.2) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.8) lib/rack/method_override.rb:24:in `call'
+rack (2.2.8) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.7.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.7.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.7.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.7.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.7.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.7.2) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.8) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.7.2) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.7.2) lib/rails/engine.rb:530:in `call'
+puma (5.6.7) lib/puma/configuration.rb:252:in `call'
+puma (5.6.7) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.7) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.7) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.7) lib/puma/server.rb:443:in `process_client'
+puma (5.6.7) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1184465940878025330)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddPublishdateToBooks (20230911233742)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "books" ADD "publishdate" date[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230911233742"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1184465940878025330)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/books" for 172.17.0.1 at 2023-09-11 23:41:27 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:6
+  Rendered books/index.html.erb within layouts/application (Duration: 52.7ms | Allocations: 7400)
+  Rendered layout layouts/application.html.erb (Duration: 1947.5ms | Allocations: 42417)
+Completed 200 OK in 2289ms (Views: 1993.8ms | ActiveRecord: 3.6ms | Allocations: 47329)
+
+
+Started GET "/books/5" for 172.17.0.1 at 2023-09-11 23:41:32 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:63:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/_book.html.erb (Duration: 11.5ms | Allocations: 320)
+  Rendered books/show.html.erb within layouts/application (Duration: 54.2ms | Allocations: 1575)
+  Rendered layout layouts/application.html.erb (Duration: 193.3ms | Allocations: 3875)
+Completed 200 OK in 268ms (Views: 194.9ms | ActiveRecord: 0.7ms | Allocations: 6765)
+
+
+Started GET "/books/5/edit" for 172.17.0.1 at 2023-09-11 23:41:36 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:63:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 213.1ms | Allocations: 5202)
+  Rendered books/edit.html.erb within layouts/application (Duration: 241.0ms | Allocations: 5582)
+  Rendered layout layouts/application.html.erb (Duration: 368.4ms | Allocations: 7890)
+Completed 200 OK in 427ms (Views: 369.8ms | ActiveRecord: 0.3ms | Allocations: 8847)
+
+
+Started PATCH "/books/5" for 172.17.0.1 at 2023-09-11 23:42:16 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"title"=>"Michael's Great Adventures", "author"=>"Michael Ramirez", "price"=>"25.99", "publishdate"=>"6/21/2003"}, "commit"=>"Update Book", "id"=>"5"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:63:in `set_book'
+Redirected to http://127.0.0.1:3000/books/5
+Completed 302 Found in 47ms (ActiveRecord: 0.4ms | Allocations: 2493)
+
+
+Started GET "/books/5" for 172.17.0.1 at 2023-09-11 23:42:17 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#show as TURBO_STREAM
+  Parameters: {"id"=>"5"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:63:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/_book.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered books/show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 652)
+  Rendered layout layouts/application.html.erb (Duration: 175.4ms | Allocations: 2941)
+Completed 200 OK in 231ms (Views: 177.9ms | ActiveRecord: 0.3ms | Allocations: 3798)
+
+
+Started GET "/books/5/edit" for 172.17.0.1 at 2023-09-11 23:42:30 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:63:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 1.6ms | Allocations: 1557)
+  Rendered books/edit.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1681)
+  Rendered layout layouts/application.html.erb (Duration: 158.1ms | Allocations: 3875)
+Completed 200 OK in 201ms (Views: 159.7ms | ActiveRecord: 0.4ms | Allocations: 4645)
+
+
+Started PATCH "/books/5" for 172.17.0.1 at 2023-09-11 23:42:45 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"title"=>"Michael's Great Adventures", "author"=>"Michael Ramirez", "price"=>"25.99", "publishdate"=>"5-9-2993"}, "commit"=>"Update Book", "id"=>"5"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:63:in `set_book'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/books_controller.rb:40:in `block in update'
+  [1m[36mBook Update (0.5ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = $1, "publishdate" = $2 WHERE "books"."id" = $3[0m  [["updated_at", "2023-09-11 23:42:46.083470"], ["publishdate", "2993-09-05"], ["id", 5]]
+  ↳ app/controllers/books_controller.rb:40:in `block in update'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/books_controller.rb:40:in `block in update'
+Redirected to http://127.0.0.1:3000/books/5
+Completed 302 Found in 51ms (ActiveRecord: 2.1ms | Allocations: 3639)
+
+
+Started GET "/books/5" for 172.17.0.1 at 2023-09-11 23:42:46 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#show as TURBO_STREAM
+  Parameters: {"id"=>"5"}
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:63:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/_book.html.erb (Duration: 0.1ms | Allocations: 37)
+  Rendered books/show.html.erb within layouts/application (Duration: 4.4ms | Allocations: 596)
+  Rendered layout layouts/application.html.erb (Duration: 174.8ms | Allocations: 2786)
+Completed 200 OK in 217ms (Views: 177.6ms | ActiveRecord: 0.8ms | Allocations: 3559)
+
+
+Started GET "/books/5/edit" for 172.17.0.1 at 2023-09-11 23:42:54 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:63:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 1.9ms | Allocations: 1508)
+  Rendered books/edit.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1631)
+  Rendered layout layouts/application.html.erb (Duration: 140.9ms | Allocations: 3815)
+Completed 200 OK in 186ms (Views: 142.5ms | ActiveRecord: 0.3ms | Allocations: 4585)
+
+
+Started PATCH "/books/5" for 172.17.0.1 at 2023-09-11 23:43:07 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"title"=>"Michael's Great Adventures", "author"=>"Michael Ramirez", "price"=>"25.99", "publishdate"=>"2023-09-11"}, "commit"=>"Update Book", "id"=>"5"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:63:in `set_book'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/books_controller.rb:40:in `block in update'
+  [1m[36mBook Update (0.6ms)[0m  [1m[33mUPDATE "books" SET "updated_at" = $1, "publishdate" = $2 WHERE "books"."id" = $3[0m  [["updated_at", "2023-09-11 23:43:07.933449"], ["publishdate", "2023-09-11"], ["id", 5]]
+  ↳ app/controllers/books_controller.rb:40:in `block in update'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/books_controller.rb:40:in `block in update'
+Redirected to http://127.0.0.1:3000/books/5
+Completed 302 Found in 50ms (ActiveRecord: 2.4ms | Allocations: 2849)
+
+
+Started GET "/books/5" for 172.17.0.1 at 2023-09-11 23:43:08 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#show as TURBO_STREAM
+  Parameters: {"id"=>"5"}
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:63:in `set_book'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/_book.html.erb (Duration: 0.2ms | Allocations: 35)
+  Rendered books/show.html.erb within layouts/application (Duration: 3.4ms | Allocations: 582)
+  Rendered layout layouts/application.html.erb (Duration: 161.8ms | Allocations: 2768)
+Completed 200 OK in 214ms (Views: 164.0ms | ActiveRecord: 0.7ms | Allocations: 3542)
+
+
+Started GET "/books" for 172.17.0.1 at 2023-09-11 23:43:10 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:6
+  Rendered books/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 962)
+  Rendered layout layouts/application.html.erb (Duration: 136.9ms | Allocations: 3155)
+Completed 200 OK in 174ms (Views: 137.9ms | ActiveRecord: 0.4ms | Allocations: 3430)
+
+
